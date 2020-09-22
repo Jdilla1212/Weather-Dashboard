@@ -1,40 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Document</title>
     <div>
-        <h1 style="background-color: dodgerblue;text-align: center; margin: 2px; height: 80px; font-size: 70px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Weather Dashboard</h1>
+        <h1
+            style="background-color: dodgerblue;text-align: center; margin: 2px; height: 80px; font-size: 70px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+            Weather Dashboard</h1>
     </div>
 </head>
+
 <body>
     <div class="container">
-        <div class="col-md-3" style="float: left; align-items: center; background-color: lightgray;">
-            <h4 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Search for a city:</h4>
-            <form class="example" action="action_page.php">
-                <input type="text" placeholder="City, State" name="search">
-                <button type="submit" style="background-color: dodgerblue;color: white;border-radius: 4px;"><i class="fa fa-search"></i></button>
-              </form>
+        <div class="card" style="width: 15rem;float: left;background-color: whitesmoke;">
+            <h4
+                style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                Search for a city:</h4>
+            <form class="example">
+                <input id="searchbar" type="text" placeholder="City, State" name="search">
+                <button id="searchbtn" type="submit"
+                    style="background-color: dodgerblue;color: white;border-radius: 4px;"><i
+                        class="fa fa-search"></i></button>
+            </form>
+            <ul id="citylist" class="list-group list-group-flush" style="list-style-type:none;align-items: center;">
+            </ul>
         </div>
-        <div class="col-md-9" style="float: right; align-content: center;">
-            <div class="row">
-                <h3 id="city" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">City</h3>
-                <h5 id="date" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Today's Date</h5>
-                <p id="temp" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Temp: </p>
-                <p id="humidity" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Humidty: </p>
-                <p id="UV" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">UV Index: </p>
-            </div>
-            <div class="row">
-                <h3>5-Day Forecast:</h3>
-            </div>
+        <div class="card" style="width: 50rem;float: right; align-items: center;">
+            <h3 id="city">
+                <p id="date">
+                </p>
+                <p id="temp">
+                    Temp: </p>
+                <p id="humidity">
+                    Humidty: </p>
+                <p id="UV">
+                    UV Index: </p>
+            </h3>
+            <!-- <div class="row" style="float: clear;">
+                    <h3>5-Day Forecast:</h3>
+                </div> -->
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js" type="text/javascript"></script>
-    
+
 </body>
+
 </html>
