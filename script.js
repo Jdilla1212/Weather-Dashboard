@@ -6,6 +6,7 @@ $(document).ready(function () {
 
     $("#searchbtn").on("click", function (event) {
         event.preventDefault();
+        $("#forecastcard").empty();
         $("#date").text(moment().format("MMMM Do YYYY"));
         let usersearch = $("#searchbar").val();
         console.log(usersearch);
@@ -47,8 +48,8 @@ $(document).ready(function () {
             url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=c61145b4fc397c4d9a55e08f94847531&units=imperial",
             method: "GET"
         }).then(function (response) {
-            console.log(response);
-
+            console.log(response); 
+            $("#forecastcard").empty();
             let temperature = response.main.temp;
             let weatherIcon = $("<img>");
             weatherIconUrl = "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png"
@@ -80,11 +81,11 @@ $(document).ready(function () {
             let uvIndexDisplay = $("<span>")
 
             if (uvResponse.value < 3) {
-                $(uvIndexDisplay).addClass("label", "label-success");
+                $(uvIndexDisplay).css("background-color", "green");
             } else if (uvResponse.value >= 3 && uvResponse.value < 6) {
-                $(uvIndexDisplay).addClass("label", "label-warning");
+                $(uvIndexDisplay).css("background-color", "yellow");
             } else {
-                $(uvIndexDisplay).addClass("label", "label-danger");
+                $(uvIndexDisplay).css("background-color", "red");
             };
 
             $("#UV").text("UV Index: ");
@@ -113,6 +114,7 @@ $(document).ready(function () {
                 let humidity = filteredArray[i].main.humidity;
                 let iconUrl = "http://openweathermap.org/img/wn/" + filteredArray[i].weather[0].icon + "@2x.png";
 
+                let card = $("<div>").addClass("card").css("width", "10rem").css("background-color", "dodgerblue");
                 let cardBody = $("<div>").addClass("card-body");
                 let cardDate = $("<h6>").addClass("card-title").text("Date: " + date);
                 let cardIcon = $("<img>").attr("src", iconUrl);
@@ -120,7 +122,8 @@ $(document).ready(function () {
                 let cardHumidity = $("<p>").addClass("card-text").text("Humidity: " + humidity + "%");
 
                 cardBody.append(cardDate, cardIcon, cardTemp, cardHumidity);
-                $("#forecastcard").append(cardBody);
+                card.append(cardBody)
+                $("#forecastcard").append(card);
                 
 
             }
