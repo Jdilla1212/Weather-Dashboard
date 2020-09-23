@@ -22,7 +22,7 @@
                 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
                 Search for a city:</h4>
             <form class="example">
-                <input id="searchbar" type="text" placeholder="City, State" name="search">
+                <input id="searchbar" type="text" placeholder="City" name="search">
                 <button id="searchbtn" type="submit"
                     style="background-color: dodgerblue;color: white;border-radius: 4px;"><i
                         class="fa fa-search"></i></button>
@@ -30,26 +30,32 @@
             <ul id="citylist" class="list-group list-group-flush" style="list-style-type:none;align-items: center;">
             </ul>
         </div>
-        <div class="card" style="width: 50rem;float: right; align-items: center;">
+        <div class="card" style="width: 50rem;float: right; align-items: left;">
             <div class="card-body">
                 <h3 class="card-title" id="city">
                 </h3>
-                <p class="card-text" id="date">
-                </p>
+                <h5 class="card-text" id="date">
+                </h5>
+                <hr class="my-4">
                 <p class="card-text" id="temp">
-                    Temp:
                 </p>
                 <p class="card-text" id="humidity">
-                    Humidty:
+                </p>
+                <p class="card-text" id="windspeed">
                 </p>
                 <p class="card-text" id="UV">
-                    UV Index:
                 </p>
             </div>
-            <!-- <div class="row" style="float: clear;">
-                    <h3>5-Day Forecast:</h3>
-                </div> -->
         </div>
+        <div class="container" id="forecastdiv" style="clear: both;">
+            <h3>Five Day Forecast:</h3>
+            <div class="row" style="justify-content:space-around">
+                <div id="forecastcard" class="card" style="width: 10rem; background-color: dodgerblue;">
+                    
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
